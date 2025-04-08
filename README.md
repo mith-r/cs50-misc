@@ -21,6 +21,16 @@ f007gvw@plank:~/cs50-dev/lab1-mith-r$ grep "New Hampshire" vaccine_data_us.csv
 ```
 ## Part F
 ``` bash
+f007gvw@plank:~/cs50-dev/lab1-mith-r$ awk -F',' '$7 == "All" {print $2"," $10}' vaccine_data_us.csv
+```
+## Part G
+``` bash
+f007gvw@plank:~/cs50-dev/lab1-mith-r$ awk -F',' '$7 == "All" {print $2"," $10}' vaccine_data_us.csv | sort -t, -k2 -nr | head -n 10
+```
+## Part H
+``` bash
+f007gvw@plank:~/cs50-dev/lab1-mith-r$ awk -F',' '$7 == "All" {print $2"," $10}' vaccine_data_us.csv | sort -t, -k2 -nr | head -n 10 | sed 's/^/|/; s/,/|/; s/$/|/' 
+```
 
 
 
