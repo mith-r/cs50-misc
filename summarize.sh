@@ -23,15 +23,15 @@ for file in "$@"; do
     
     #Based on file type, print proper markdown triple tick notation
     if [[ "$file" == *.sh ]]; then
-      echo '``` bash'
+      echo '```bash'
     else
-      echo '``` c'
+      echo '```c'
     fi
     
     #Read each line of the file
     while read line; do
       #If first line starts with #!, skip line
-      if [[ "$first" == true && "$line" = \#\!* ]]; then
+      if [[ "$first" == true && "$file" == *.sh ]]; then
        continue
       fi 
       
