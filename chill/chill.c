@@ -54,6 +54,7 @@ void printChart(float inputTemp, float inputWind)
     maxTemp = 40.0;
   } 
    
+  //Loops through temperature. If inputed, only one iteration through
   while (temp <= maxTemp){
     float wind = inputWind;
     float maxWind = wind; //Assuming wind is inputed, sets max to equal input
@@ -64,7 +65,8 @@ void printChart(float inputTemp, float inputWind)
       wind = 5.0;
       maxWind = 15.0;
     }
-
+    
+    //Loops through wind speeds. If inputed, only one iteration through
     while (wind <= maxWind){
       printf("%5.1f  %5.1f  %5.1f\n", temp, wind, windChill(temp, wind));
       wind += windInterval;
@@ -84,7 +86,7 @@ int main(const int argc, const char* argv[])
   else if (argc == 2) { //one input
 
     if (atof(argv[1]) > 50.0){ //error checking
-      printf("./chill: Temperate must be less than or equal to 50.0 degrees Fahrenheit\n");
+      printf("./chill: Temperature must be less than or equal to 50.0 degrees Fahrenheit\n");
       return 1;
     }
 
@@ -93,7 +95,7 @@ int main(const int argc, const char* argv[])
   else if (argc == 3) { //two inputs
 
    if (atof(argv[1]) > 50.0){ //error checking
-      printf("./chill: Temperate must be less than or equal to 50.0 degrees Fahrenheit\n");
+      printf("./chill: Temperature must be less than or equal to 50.0 degrees Fahrenheit\n");
       return 1;
    }
    if (atof(argv[2]) < 0.5){ //error checkign
