@@ -1,6 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 /* words.c Mithun Rameshkumar April 11, 2025
  *
@@ -63,6 +64,8 @@ void writeWords(FILE *file) {
  */
 int main(int argc, char *argv[])
 {
+    //Flag to determine exit status
+    bool error = false;
     //Function to read from files if more arguments given
     if (argc > 1) {
         //looping through all files
@@ -80,6 +83,7 @@ int main(int argc, char *argv[])
             else if (file == NULL) {
 
                 fprintf(stderr, "Cannot open file %s\n", argv[i]);
+                error = true;
 
             } else {
 
@@ -91,6 +95,10 @@ int main(int argc, char *argv[])
     //If no other files given
     else {
         writeWords(stdin);
+    }
+
+    if (error == true){
+        return 1;
     }
 
     return 0; //end program successfully

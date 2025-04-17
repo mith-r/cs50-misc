@@ -12,6 +12,9 @@ echo "0 16 31" | ./histo
 # Test 3: Values that require multiple doublings
 echo "32 64 128 199" | ./histo
 
+# Test 3: Values that require multiple doublings + low value
+echo "-57382579 64 128 199" | ./histo
+
 # Test 4: Contains negative values and new lines
 echo "-1 -20  10 20 " | ./histo
 
