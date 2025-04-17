@@ -1,4 +1,7 @@
 #!/bin/bash
+#Mithun Rameshkumar
+#testing.sh
+#test file for words
 
 #Test 1: Read from stdin
 echo "This is reading from stdin" | ./words
