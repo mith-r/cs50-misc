@@ -10,7 +10,7 @@ echo "This is reading from stdin" | ./words
 ./words test1.txt
 
 #Test 3: Read from two files
-./ words test1.txt test2.txt
+./words test1.txt test2.txt
 
 #Test 4: Mix of file and stdin using "-"
 echo "stdin should be called in the middle" | ./words test1.txt - test2.txt

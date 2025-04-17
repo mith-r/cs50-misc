@@ -29,6 +29,9 @@ _module_raw () {  eval "$(/usr/bin/tclsh8.6 '/usr/lib/x86_64-linux-gnu/modulecmd
  return $_mlstatus
 }
 #!/bin/bash
+#Mithun Rameshkumar
+#testing.sh
+#test file for words
 
 #Test 1: Read from stdin
 echo "This is reading from stdin" | ./words
@@ -58,8 +61,39 @@ separate
 lines
 
 #Test 3: Read from two files
-./ words test1.txt test2.txt
-testing.sh: line 10: ./: Is a directory
+./words test1.txt test2.txt
+This
+is
+the
+first
+test
+file
+It
+should
+print
+each
+of
+these
+words
+on
+separate
+lines
+This
+is
+the
+second
+test
+file
+It
+should
+print
+each
+of
+these
+words
+on
+separate
+lines
 
 #Test 4: Mix of file and stdin using "-"
 echo "stdin should be called in the middle" | ./words test1.txt - test2.txt
@@ -86,6 +120,22 @@ called
 in
 the
 middle
+This
+is
+the
+second
+test
+file
+It
+should
+print
+each
+of
+these
+words
+on
+separate
+lines
 
 #Test 5: File that does not exist
 ./words test3.txt
