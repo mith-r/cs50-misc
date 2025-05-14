@@ -2,7 +2,7 @@
 # Summer 2024 Class Catalog
 ---
 
-[English](english.md) - Department chair: <github username>
+[English](english.md) - Department chair: <mith-r>
 
 [Economics](economics.md) - Department chair: <github username> 
 
