@@ -1,0 +1,148 @@
+ml () {  module ml "$@"
+}
+module () {  local _mlredir=1;
+ if [ -n "${MODULES_REDIRECT_OUTPUT+x}" ]; then
+ if [ "$MODULES_REDIRECT_OUTPUT" = '0' ]; then
+ _mlredir=0;
+ else
+ if [ "$MODULES_REDIRECT_OUTPUT" = '1' ]; then
+ _mlredir=1;
+ fi;
+ fi;
+ fi;
+ case " $@ " in 
+ *' --no-redirect '*)
+ _mlredir=0
+ ;;
+ *' --redirect '*)
+ _mlredir=1
+ ;;
+ esac;
+ if [ $_mlredir -eq 0 ]; then
+ _module_raw "$@";
+ else
+ _module_raw "$@" 2>&1;
+ fi
+}
+_module_raw () {  eval "$(/usr/bin/tclsh8.6 '/usr/lib/x86_64-linux-gnu/modulecmd.tcl' bash "$@")";
+ _mlstatus=$?;
+ return $_mlstatus
+}
+#!/bin/bash
+#Mithun Rameshkumar
+#testing.sh
+#test file for words
+
+#Test 1: Read from stdin
+echo "This is reading from stdin" | ./words
+This
+is
+reading
+from
+stdin
+
+#Test 2: Read from one file
+./words test1.txt
+This
+is
+the
+first
+test
+file
+It
+should
+print
+each
+of
+these
+words
+on
+separate
+lines
+
+#Test 3: Read from two files
+./words test1.txt test2.txt
+This
+is
+the
+first
+test
+file
+It
+should
+print
+each
+of
+these
+words
+on
+separate
+lines
+This
+is
+the
+second
+test
+file
+It
+should
+print
+each
+of
+these
+words
+on
+separate
+lines
+
+#Test 4: Mix of file and stdin using "-"
+echo "stdin should be called in the middle" | ./words test1.txt - test2.txt
+This
+is
+the
+first
+test
+file
+It
+should
+print
+each
+of
+these
+words
+on
+separate
+lines
+stdin
+should
+be
+called
+in
+the
+middle
+This
+is
+the
+second
+test
+file
+It
+should
+print
+each
+of
+these
+words
+on
+separate
+lines
+
+#Test 5: File that does not exist
+./words test3.txt
+Cannot open file test3.txt
+
+#Test 6: Input with no words
+echo "1234 !@#$" | ./words
+
+#test 7: Empty file
+./words empty.txt
