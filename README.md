@@ -15,10 +15,15 @@ Smaller projects and exercises from Dartmouth CS50, Spring 2025.
 
 ## History
 
-The original repositories were combined without squashing or rewriting their
-commits. Their authors, timestamps, and commit IDs are preserved. Original
-branches are retained under `archive/<source-repository>/`. New commits record
-the restoration and previously uncommitted files; they are dated when restored.
+The original repositories are combined here, with larger changes organized
+into focused commits. Original histories, authors, timestamps, and commit IDs
+remain on `archive/<source-repository>/` branches. The main branch before
+reorganization is saved as `archive/pre-reorganization-main`.
+
+Split changes use their original commit timestamps. Previously uncommitted
+exercises use the preserved source-file modification times as estimates of when
+the work was saved. Repository organization and documentation commits are dated
+when those updates were made.
 
 These exercises were developed on Dartmouth's Linux servers. References to
 `/thayerfs` and the `shared` symlink require the original course environment;
