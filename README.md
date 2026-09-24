@@ -16,8 +16,9 @@ Smaller projects and exercises from Dartmouth CS50, Spring 2025.
 ## History
 
 The original repositories are combined here, with larger changes organized
-into focused commits. Original histories, authors, timestamps, and commit IDs
-remain on `archive/<source-repository>/` branches. The main branch before
+into focused commits. Submission histories, authorship, and project timestamps remain on
+`archive/<source-repository>/` branches. Author emails have been corrected to
+link to `mith-r`. The main branch before
 reorganization is saved as `archive/pre-reorganization-main`.
 
 Split changes use their original commit timestamps. Previously uncommitted
